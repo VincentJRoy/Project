@@ -3,11 +3,19 @@ title: "Code Book"
 output: github_document
 ---
 Introduction
-Human Activity Recognition Using Smartphones Dataset (Version 1.0) from Samsung Galaxy S smartphones while subjects performed various activities (listed activities below). For the particulars of the measurements recorded and their derivation, refer to the documentation of the dataset location in features_info.txt)
+  Human Activity Recognition Using Smartphones Dataset (Version 1.0) from
+  Samsung Galaxy S smartphones while subjects performed various activities
+  (listed activities below). For the particulars of the measurements
+  recorded and their derivation, refer to the documentation of the dataset
+  location in features_info.txt)
 
-This package contains two datasets. The first is a merge of both the testing and training measurements datasets filtered to include only the variables related to mean and standard deviation measurements.
-
-The following variables are loaded from the CI HAR Dataset
+  This package contains two datasets. The first is a merge of both the testing 
+  and training measurements datasets then filtered to include only the variables
+  related to mean and standard deviation measurements including both the 
+  frquency and time measurements.The second is the raw file dataset.The 
+  following variables are loaded from the dataset
+  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+  
 
     X_train
     X_test
@@ -22,7 +30,7 @@ The script run_analysis.Rperforms the 5 steps:
 
 Observations and Variables:
 ===========================
-x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
+    x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
     x_data, y_data and subject_data merge the previous datasets to further analysis.
     features contains the correct names for the x_data dataset, which are applied to the column names stored in mean_and_std_features, a numeric vector used to extract the desired data.
     A similar approach is taken with activity names through the activities variable.
