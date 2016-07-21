@@ -1,8 +1,14 @@
 ---
-title: "Code Book"
+title: "Human Activity Recognition Using Smartphones Dataset Code Book"
 output: github_document
+author: "Vincent Roy"
+date: "July 18, 2016"
+output: html_document
 ---
-Introduction
+           
+
+Introduction:
+
   Human Activity Recognition Using Smartphones Dataset (Version 1.0) from
   Samsung Galaxy S smartphones while subjects performed various activities
   (listed activities below). For the particulars of the measurements
@@ -21,21 +27,6 @@ Introduction
     X_test
     features
 
-The script run_analysis.Rperforms the 5 steps:
-1. First, all the similar data is merged using the rbind() function. By similar, we address those files having the same number of columns and referring to the same entities.
-    Then, only those columns with the mean and standard deviation measures are taken from the whole dataset. After extracting these columns, they are given the correct names, taken from features.txt.
-    As activity data is addressed with values 1:6, we take the activity names and IDs from activity_labels.txt and they are substituted in the dataset.
-    On the whole dataset, those columns with vague column names are corrected.
-    Finally, we generate a new dataset with all the average measures for each subject and activity type (30 subjects * 6 activities = 180 rows). The output file is called averages_data.txt, and uploaded to this repository.
-
-Observations and Variables:
-===========================
-    x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
-    x_data, y_data and subject_data merge the previous datasets to further analysis.
-    features contains the correct names for the x_data dataset, which are applied to the column names stored in mean_and_std_features, a numeric vector used to extract the desired data.
-    A similar approach is taken with activity names through the activities variable.
-    all_data merges x_data, y_data and subject_data in a big dataset.
-    Finally, averages_data contains the relevant averages which will be later stored in a .txt file. ddply() from the plyr package is used to apply colMeans() and ease the development.
 
 subject [ "subjectID" "subject"]
 subjectID [1:30]
@@ -46,8 +37,8 @@ activityID [1:6]
 activity ["WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"]
 
 
-features (extracted from larger population of 561 features based on mean, std only)
-features_mean_std [
+features_mean_std(extracted from larger population of 561 features based on mean, std only)
+
 tBodyAcc-mean-X
 tBodyAcc-mean-Y
 tBodyAcc-mean-Z
@@ -114,7 +105,7 @@ fBodyBodyGyroMag-mean
 fBodyBodyGyroMag-std
 fBodyBodyGyroJerkMag-mean:
 fBodyBodyGyroJerkMag-std
-]
+
 
 features_mean_std  (extracted feature original position)
  1   2   3   4   5   6  41  42  43  44  45  46  81  82  83  84  85  86 121 122 123
@@ -123,12 +114,13 @@ features_mean_std  (extracted feature original position)
 530 542 543
 
 Methods:
-Functionality of run_analysis.R:
-1. Merge the training and the test sets to create one data set of entire observation of the subjects activities observation uning rbind (dplyr package
-2. Extracts only the measurements on the mean and standard deviation for each measurement by u.
-3. Uses descriptive activity names to name the activities in the data set
-4. Appropriately labels the data set with descriptive activity names.
-5  Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+  Functionality of run_analysis.R: 1. Merge the training and the test sets to 
+  create one data set of entire observation of the subjects activities observation
+  uning rbind (dplyr package 2. Extracts only the measurements on the mean and 
+  standard deviation for each measurement by u. 3. Uses descriptive activity names
+  to name the activities in the data set 4. Appropriately labels the data set with
+  descriptive activity names. 5  Creates a second, independent tidy data set with 
+  the average of each variable for each activity and each subject.
 
 Prototype of run_analysis.R
 # Download data, unpack, list files "UCI HAR Dataset.zip unzip(destfile) and list files recursively
