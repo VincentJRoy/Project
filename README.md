@@ -38,4 +38,5 @@ How to recreate the tidy data set:
 5. Source script (it requires the shape2 package): source('run_analysis.R')
 
 In the repository working root directory you find the Tidy file: 
-HAR < current date time > .txt (Note: which is a CSV file so rename the extension to .csv if you are read it into R with read.csv)
+HAR < current date time > .txt   use read.table(file, header = TRUE, sep = ",")
+(Note: comma delimited file so rename the extension to .csv if you are read it into R with read.csv() )
