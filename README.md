@@ -35,7 +35,7 @@ How to recreate the tidy data set:
 2. Download compressed raw data
 3. Unzip raw data and copy the directory UCI HAR Dataset to the cloned repository root directory
 4. Open a R console and set the working directory to the repository root (use setwd())
-5. Source run_analisys.R script (it requires the shape2 package): source('run_analysis.R')
+5. Source script (it requires the shape2 package): source('run_analysis.R')
 
 In the repository working root directory you find the Tidy file: 
-HAR <current date time>.txt 
+HAR < current date time > .txt (Note: which is a CSV file so rename the extension to .csv if you are read it into R with read.csv)
